@@ -191,6 +191,11 @@ body {
   mask-image: url("../images/icons/favorite.svg");
 }
 
+.navigation-search:active::before,
+.navigation-favorite:active::before {
+  background-color: rgba(117, 97, 87, 0.3);
+}
+
 .favorite-counter {
   position: absolute;
   padding: 5px;
@@ -246,7 +251,6 @@ body {
 
 .button-blue:disabled {
   background-color: #e5e5e5;
-  color: rgba(0, 0, 0, 0.3);
   cursor: default;
 }
 
@@ -431,9 +435,8 @@ body {
 }
 
 .advantages-list {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   margin: 0;
   margin-bottom: 96px;
   padding: 0;
@@ -445,7 +448,6 @@ body {
   margin: 0;
   padding: 0;
   flex: 1;
-  min-width: 280px;
   background-color: rgba(131, 179, 211, 0.12);
 }
 
@@ -1061,6 +1063,7 @@ body {
 
 .range-toggle:active {
   box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.4);
+  outline: 2px solid rgba(131, 179, 211, 1);
 }
 
 .toggle-min {
@@ -1292,6 +1295,20 @@ body {
   background-color: #7db54f;
   padding-top: 8px;
   padding-bottom: 8px;
+}
+
+.button-favorite-in:hover:not(:disabled),
+.button-favorite-in:focus {
+  background-color: #6c9e42;
+}
+
+.button-favorite-in:active {
+  color: rgba(255, 255, 255, 0.3)
+}
+
+.button-favorite-in:disabled {
+  background-color: #e5e5e5;
+  cursor: default;
 }
 
 .button-more {
